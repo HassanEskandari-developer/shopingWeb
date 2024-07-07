@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* first slider animation */
+@keyframes slide11 {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide12 {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide13 {
+    0% {
+        scale: 0;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+/* second slider animation */
+@keyframes slide21 {
+    0% {
+        transform: translateX(-100%);
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+    }
+
+    100% {
+        transform: translateX(0%);
+        transform: rotate(0deg);
+        transform-origin: bottom left;
+    }
+}
+
+@keyframes slide22 {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* third slider animation */
+@keyframes slide31 {
+    0% {
+        transform: translateX(-100%);
+        transform: rotate(-90deg);
+        transform-origin: bottom right;
+    }
+
+    100% {
+        transform: translateX(0%);
+        transform: rotate(0deg);
+        transform-origin: bottom right;
+    }
+}
+
+@keyframes slide32 {
+    0% {
+        transform: translateX(100%);
+        transform: rotate(90deg);
+        transform-origin: bottom right;
+    }
+
+    100% {
+        transform: translateX(0%);
+        transform: rotate(0deg);
+        transform-origin: bottom right;
+    }
+}
+
+@keyframes slide33 {
+    0% {
+        transform: rotate(0deg);
+        scale: 0;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        scale: 1;
+    }
+}
+
+@keyframes addcard {
+    0% {
+        transform: translateY(170%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes sliderNext {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* animaition of Pop Up Like Product */
+@keyframes PopUpTime {
+    0% {
+        width: 0;
+    }
+
+    25% {
+        width: 25%;
+    }
+
+    50% {
+        width: 50%;
+    }
+
+    75% {
+        width: 75%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes PopUpOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+/* animation of Quick View Open and Close */
+@keyframes QuickViewOpen {
+    0% {
+        scale: 0;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+/* animation Cart is Open */
+@keyframes CartOpen {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* slider */
+.swiper-button-prev,
+.swiper-button-next {
+    background-color: rgba(0, 0, 0, 0.716) !important;
+    color: white !important;
+    transition: all 1s linear !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: #e65540 !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: x-large !important;
+}
+
+.swiper-button-prev::after {
+    content: '\276C' !important;
+}
+
+.swiper-button-next::after {
+    content: '\276D' !important;
+}
+
+/* first slider */
+.mySwiper .swiper-slide-active .slider11 {
+    animation: slide11 1s linear;
+}
+
+.mySwiper .swiper-slide-active .slider12 {
+    animation: slide12 1s linear 1s, sliderNext 1s linear;
+}
+
+.mySwiper .swiper-slide-active .slider13 {
+    animation: slide13 1s linear 2s, sliderNext 2s linear;
+}
+
+/* second slider */
+.mySwiper .swiper-slide-active .slider21 {
+    animation: slide21 1s linear;
+}
+
+.mySwiper .swiper-slide-active .slider22 {
+    animation: slide22 1s ease 1s, sliderNext 1s linear;
+}
+
+.mySwiper .swiper-slide-active .slider23 {
+    animation: slide12 1s linear 2s, sliderNext 2s linear;
+}
+
+/* third slider */
+.mySwiper .swiper-slide-active .slider31 {
+    animation: slide31 1s ease;
+}
+
+.mySwiper .swiper-slide-active .slider32 {
+    animation: slide32 1s linear 1s, sliderNext 1s linear;
+}
+
+.mySwiper .swiper-slide-active .slider33 {
+    animation: slide33 1s linear 2s, sliderNext 2s linear;
+}
+
+.addCart {
+
+    animation: addcard 1s linear;
+}
+
+
+/* Pop Up Like Product */
+.time {
+    animation: PopUpTime 4s linear;
+}
+
+.opa {
+    animation: PopUpOpacity 4s linear;
+}
+
+/* QuickView Open */
+.open {
+    animation: QuickViewOpen 0.5s linear;
+}
+
+/* CartOpen */
+.cartOpen {
+    animation: CartOpen 1s linear;
+}
