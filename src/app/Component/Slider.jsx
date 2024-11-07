@@ -48,23 +48,23 @@ export default function App() {
                 <SwiperSlide className='text-center flex justify-center items-center relative'>
                     <div className="absolute top-0 left-0 w-full h-full px-4 flex items-center justify-start">
                         <div className="py-[50px] px-[50px] lg:px-[150px] w-full h-fit flex justify-start flex-wrap">
-                            <span className={`${popp.className} text-lg text-nowrap md:text-3xl leading-5 text-[#333] w-full text-start slider11`}>Women Collection {year.getFullYear()} </span>
-                            <h2 className={`${play.className} w-full text-start text-4xl md:text-6xl leading-10 uppercase text-[#333] pb-11 pt-9 slider12 font-bold`}>NEW SEASON</h2>
+                            <span className={`${popp.className} text-lg text-nowrap md:text-3xl leading-5 text-[#FF5733] w-full text-start slider11`}>Women Collection {year.getFullYear()} </span>
+                            <h2 className={`${play.className} w-full text-start text-4xl md:text-6xl leading-10 uppercase text-[#FF5733] pb-11 pt-9 slider12 font-bold`}>NEW SEASON</h2>
                             <div className="w-[161px] slider13">
-                                <Link href="/" className={`${monst.className} rounded-3xl w-full h-[46px] text-base leading-6 uppercase text-[#111111] bg-white flex justify-center items-center hover:bg-[#e65540] hover:text-white cursor-pointer transition-all duration-[0.4s] shadow-[0_1px_5px_0px_rgba(0,0,0,0.2)]`}>Shop Now</Link>
+                                <Link href="/" className={`${monst.className} rounded-3xl w-full h-[46px] text-base leading-6 uppercase text-[#FF5733] bg-white flex justify-center items-center hover:bg-[#e65540] hover:text-white cursor-pointer transition-all duration-[0.4s] shadow-[0_1px_5px_0px_rgba(0,0,0,0.2)]`}>Shop Now</Link>
                             </div>
                         </div>
                     </div>
-                    <Image src={S1} alt="Slider1" className="w-full h-full object-cover" />
+                    <Image src={S3} alt="Slider1" className="w-full h-full object-cover" />
                 </SwiperSlide>
 
                 <SwiperSlide className='text-center flex justify-center items-center relative'>
                     <div className="absolute top-0 left-0 w-full h-full px-4 flex items-center justify-start">
                         <div className="py-[50px] px-[50px] lg:px-[150px] w-full h-fit flex justify-start flex-wrap">
-                            <span className={`${popp.className} text-lg text-nowrap md:text-3xl leading-5 text-[#333] w-full text-start slider21`}>New Trend</span>
-                            <h2 className={`${play.className} w-full text-start text-4xl md:text-6xl leading-10 uppercase text-[#333] pb-11 pt-9 slider22 font-bold`}>Accessories</h2>
+                            <span className={`${popp.className} text-lg text-nowrap md:text-3xl leading-5 text-[#FF5733] w-full text-start slider21`}>New Trend</span>
+                            <h2 className={`${play.className} w-full text-start text-4xl md:text-6xl leading-10 uppercase text-[#FF5733] pb-11 pt-9 slider22 font-bold`}>Accessories</h2>
                             <div className="w-[161px] slider23">
-                                <Link href="/" className={`${monst.className} rounded-3xl w-full h-[46px] text-base leading-6 uppercase text-[#111111] bg-white flex justify-center items-center hover:bg-[#e65540] hover:text-white cursor-pointer transition-all duration-[0.4s] shadow-[0_1px_5px_0px_rgba(0,0,0,0.2)]`}>Shop Now</Link>
+                                <Link href="/" className={`${monst.className} rounded-3xl w-full h-[46px] text-base leading-6 uppercase text-[#FF5733] bg-white flex justify-center items-center hover:bg-[#e65540] hover:text-white cursor-pointer transition-all duration-[0.4s] shadow-[0_1px_5px_0px_rgba(0,0,0,0.2)]`}>Shop Now</Link>
                             </div>
                         </div>
                     </div>
@@ -74,14 +74,14 @@ export default function App() {
                 <SwiperSlide className='text-center flex justify-center items-center relative'>
                     <div className="absolute top-0 left-0 w-full h-full px-4 flex items-center justify-start">
                         <div className="py-[50px] px-[50px] lg:px-[150px] w-full h-fit flex justify-start flex-wrap">
-                            <span className={`${popp.className} text-lg text-nowrap md:text-3xl leading-5 text-[#333] w-full text-start slider31`}>Men Collection {year.getFullYear()}</span>
-                            <h2 className={`${play.className} w-full text-start text-4xl md:text-6xl leading-10 uppercase text-[#333] pb-11 pt-9 slider32 font-bold`}>New arrivals</h2>
+                            <span className={`${popp.className} text-lg text-nowrap md:text-3xl leading-5 text-[#FF5733] w-full text-start slider31`}>Men Collection {year.getFullYear()}</span>
+                            <h2 className={`${play.className} w-full text-start text-4xl md:text-6xl leading-10 uppercase text-[#FF5733] pb-11 pt-9 slider32 font-bold`}>New arrivals</h2>
                             <div className="w-[161px] slider33">
-                                <Link href="/" className={`${monst.className} rounded-3xl w-full h-[46px] text-base leading-6 uppercase text-[#111111] bg-white flex justify-center items-center hover:bg-[#e65540] hover:text-white cursor-pointer transition-all duration-[0.4s] shadow-[0_1px_5px_0px_rgba(0,0,0,0.2)]`}>Shop Now</Link>
+                                <Link href="/" className={`${monst.className} rounded-3xl w-full h-[46px] text-base leading-6 uppercase text-[#FF5733] bg-white flex justify-center items-center hover:bg-[#e65540] hover:text-white cursor-pointer transition-all duration-[0.4s] shadow-[0_1px_5px_0px_rgba(0,0,0,0.2)]`}>Shop Now</Link>
                             </div>
                         </div>
                     </div>
-                    <Image src={S3} alt="Slider3" className="w-full h-full object-cover" />
+                    <Image src={S1} alt="Slider3" className="w-full h-full object-cover" />
                 </SwiperSlide>
             </Swiper>
         </>

@@ -1,7 +1,8 @@
 "use clinet"
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
+import { useCart } from './CartContext';
 import { getProducts, setProducts } from './localStorageUtils';
-import { addToCart  } from './localStorageAddToCart';
+import { addToCart } from './localStorageAddToCart';
 import Image from "next/image";
 import Link from "next/link";
 import AddLikePopUp from './AddLikePopUp';
@@ -24,51 +25,57 @@ const popp = Poppins({
 });
 
 export default function Show({ products }) {
+    const { addToCart } = useCart();
     const [likedProducts, setLikedProductsState] = useState([]);
     const [quick, setQuick] = useState(null)
     const [pop, setPop] = useState(false)
-    const [addPop , setAddPop] = useState(false)
+    const [addPop, setAddPop] = useState(false)
     const [view, setView] = useState(false)
-    let localStorageKey = 'likedProducts';
 
+   
 
-    const savedLikes = getProducts("likedProducts");
-    useEffect(() => {
-        setLikedProductsState(savedLikes);
-    }, []);
-
-
-    useEffect(() => {
-        setProducts("likedProducts", likedProducts?.length || likedProducts)
-    }, [likedProducts]);
 
     useEffect(() => {
         if (view) {
-          document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
         } else {
-          document.body.style.overflow = '';
+            document.body.style.overflow = '';
         }
-      }, [view]);
+    }, [view]);
 
 
-    const handleLikeClick = (productId) => {
-        setPop(true)
-        setTimeout(() => {
-            setPop(false)
-        }, 4000);
-        localStorageKey = 'likedProducts';
-        setLikedProductsState((prevLikedProducts) => {
-            const updatedLikes = {
-                ...prevLikedProducts,
-                [productId]: !prevLikedProducts[productId],
-            };
-            setProducts(localStorageKey, updatedLikes);
-            return updatedLikes;
-        })
-        return clearTimeout()
-    };
+    // Load liked products from localStorage on initial mount only
+ useEffect(() => {
+    const savedLikes = getProducts("likedProducts");
+    if (savedLikes) {
+        setLikedProductsState(savedLikes); // Load only if there's data
+    }
+}, []);
 
-    const handleAddCart = (item) =>{
+// Sync liked products to local storage only when likedProducts has actual items
+useEffect(() => {
+    if (Object.keys(likedProducts).length > 0) {
+        setProducts("likedProducts", likedProducts);
+    }
+}, [likedProducts]);
+
+const handleLikeClick = (productId) => {
+    setLikedProductsState((prevLikedProducts) => {
+        const updatedLikes = { ...prevLikedProducts };
+        
+        if (updatedLikes[productId]) {
+            // Remove product from likedProducts if it already exists
+            delete updatedLikes[productId];
+        } else {
+            // Add product to likedProducts if it's not already liked
+            updatedLikes[productId] = true;
+        }
+        
+        return updatedLikes;
+    });
+};
+
+    const handleAddCart = (item) => {
         setAddPop(!addPop)
         setTimeout(() => {
             setAddPop(false)
@@ -79,7 +86,7 @@ export default function Show({ products }) {
     const handleViewClick = (id) => {
         setQuick(id)
         setView(!view)
-        
+
     }
     return (
         <div className="w-full md:flex md:flex-wrap md:gap-16 lg:gap-7">
@@ -90,26 +97,25 @@ export default function Show({ products }) {
                             <Image src={val.image} width={500} height={500} alt="product" className="object-cover" />
                         </div>
                         <div className="absolute bottom-20 md:bottom-16 lg:bottom-20 right-3 flex flex-nowrap overflow-hidden gap-2 p-2">
-                            <div onClick={() => handleAddCart(val)} className="w-9 h-9 bg-[#fff] shadow-[0_1px_5px_0px_rgba(0,0,0,0.2)] rounded-full text-lg text-[#000] hover:px-4 hover:w-fit flex justify-center items-center flex-nowrap transition-all duration-[0.4s] group cursor-pointer">
+                            <div onClick={() => handleAddCart(val)} className="w-9 h-9 bg-[#FF5733] shadow-[0_1px_5px_0px_rgba(0,0,0,0.2)] rounded-full text-lg text-[#000] hover:px-4 hover:w-fit flex justify-center items-center flex-nowrap transition-all duration-[0.4s] group cursor-pointer">
                                 <CiShoppingCart />
                                 <span className="font-bold uppercase hidden group-hover:flex transition-all duration-[0.4s] text-xs pl-2 addCart">Add To Cart</span>
                             </div>
-                            <div onClick={() => handleViewClick(val.id)} className="w-9 h-9 bg-[#fff] shadow-[0_1px_5px_0px_rgba(0,0,0,0.2)] rounded-full text-lg text-[#000] hover:px-4 hover:w-fit flex justify-center items-center flex-nowrap transition-all duration-[0.4s] group cursor-pointer">
+                            <div onClick={() => handleViewClick(val.id)} className="w-9 h-9 bg-[#FF5733] shadow-[0_1px_5px_0px_rgba(0,0,0,0.2)] rounded-full text-lg text-[#000] hover:px-4 hover:w-fit flex justify-center items-center flex-nowrap transition-all duration-[0.4s] group cursor-pointer">
                                 <FaRegEye />
                                 <span className="font-bold uppercase hidden group-hover:flex transition-all duration-[0.4s] text-xs pl-2 addCart">Quick View</span>
                             </div>
                         </div>
                         <div className="h-[15%] pt-3.5 flex flex-nowrap px-1">
                             <div className="h-full w-[80%]">
-                                <Link href="/" className={`${popp.className} text-sm text-[#999] transition-all duration-[0.4s] hover:text-[#e65540] pb-1.5 block`}>{val.title}</Link>
-                                <span className={`${popp.className} text-sm tracking-wider text-[#666] block`}>${val.price}</span>
+                                <Link href="/" className={`${popp.className} text-sm text-[#FFFFFF] transition-all duration-[0.4s] hover:text-[#e65540] pb-1.5 block`}>{val.title}</Link>
+                                <span className={`${popp.className} text-sm tracking-wider text-[#FF5733] block`}>${val.price}</span>
                             </div>
                             <div className="h-full w-[20%] flex justify-end items-start">
-                                {likedProducts[val.id] ? (
-                                    <FcLike onClick={() => handleLikeClick(val.id)} className={`${monst.className} pr-2 text-[#e65540] text-2xl cursor-pointer transition-all duration-[0.4s] hover:scale-125`} />
-
-                                ) : (
+                                {likedProducts[val.id] == null ? (
                                     <PiHeart onClick={() => handleLikeClick(val.id)} className={`${monst.className} pr-2 text-[#adadad] text-2xl cursor-pointer transition-all duration-[0.4s] hover:scale-125`} />
+                                ) : (
+                                    <FcLike onClick={() => handleLikeClick(val.id)} className={`${monst.className} pr-2 text-[#e65540] text-2xl cursor-pointer transition-all duration-[0.4s] hover:scale-125`} />
                                 )}
 
 
@@ -119,7 +125,7 @@ export default function Show({ products }) {
                 )
             })}
             {pop ? <AddLikePopUp prop={pop} /> : null}
-            {addPop ? <AddToCartPopUp/> : null}
+            {addPop ? <AddToCartPopUp /> : null}
             {view && (
                 <section className="w-full h-[100vh] py-24 bg-[#000000dd] fixed top-0 left-0 z-40 flex justify-center items-center overflow-y-auto">
                     {products.map((val) => {

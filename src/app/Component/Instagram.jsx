@@ -39,8 +39,8 @@ export default function Instagram() {
         setIsLike5(!isLike5)
     }
     return (
-        <div className="w-full pt-5 h-fit">
-            <h3 className={`${monst.className} pb-12 text-center align-middle text-[#222222] text-3xl uppercase`}>@ follow us on Instagram</h3>
+        <div className="w-full pt-5 h-fit bg-[#121212]">
+            <h3 className={`${monst.className} pb-12 text-center align-middle text-[#FFFFFF] text-3xl uppercase`}>@ follow us on Instagram</h3>
             <div className="md:flex flex-wrap">
                 <div className="md:w-1/2 lg:w-1/3 xl:flex-1 cursor-pointer relative group overflow-hidden">
                     <Image src={Insta1} alt="Insta1" />
@@ -56,7 +56,7 @@ export default function Instagram() {
                         </div>
                         <div className={`${monst.className} pr-6 pl-10 pb-7 text-[#cccccc] text-[13px] leading-6 transform translate-y-[500px] transition-all duration-[0.4s] group-hover:translate-y-0`}>
                             <p className="mb-3.5">Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.</p>
-                            <span>Photo by @nancyward</span>
+                            {/* <span>Photo by @nancyward</span> */}
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ export default function Instagram() {
                         </div>
                         <div className={`${monst.className} pr-6 pl-10 pb-7 text-[#cccccc] text-[13px] leading-6 transform translate-y-[500px] transition-all duration-[0.4s] group-hover:translate-y-0`}>
                             <p className="mb-3.5">Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.</p>
-                            <span>Photo by @nancyward</span>
+                            {/* <span>Photo by @nancyward</span> */}
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ export default function Instagram() {
                         </div>
                         <div className={`${monst.className} pr-6 pl-10 pb-7 text-[#cccccc] text-[13px] leading-6 transform translate-y-[500px] transition-all duration-[0.4s] group-hover:translate-y-0`}>
                             <p className="mb-3.5">Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.</p>
-                            <span>Photo by @nancyward</span>
+                            {/* <span>Photo by @nancyward</span> */}
                         </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@ export default function Instagram() {
                         </div>
                         <div className={`${monst.className} pr-6 pl-10 pb-7 text-[#cccccc] text-[13px] leading-6 transform translate-y-[500px] transition-all duration-[0.4s] group-hover:translate-y-0`}>
                             <p className="mb-3.5">Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.</p>
-                            <span>Photo by @nancyward</span>
+                            {/* <span>Photo by @nancyward</span> */}
                         </div>
                     </div>
                 </div>
@@ -128,23 +128,23 @@ export default function Instagram() {
                         </div>
                         <div className={`${monst.className} pr-6 pl-10 pb-7 text-[#cccccc] text-[13px] leading-6 transform translate-y-[500px] transition-all duration-[0.4s] group-hover:translate-y-0`}>
                             <p className="mb-3.5">Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.</p>
-                            <span>Photo by @nancyward</span>
+                            {/* <span>Photo by @nancyward</span> */}
                         </div>
                     </div>
                 </div>
             </div>
-            <section className="bg-white pt-12 pb-16">
+            <section className="bg-[#121212] pt-12 pb-16">
                 <div className="md:flex px-4">
                     <div className="flex-1 p-4">
-                        <h4 className={`${monst.className} text-[#555555] text-lg leading-6 text-center `}>Free Delivery Worldwide</h4>
+                        <h4 className={`${monst.className} text-[#FFFFFF] text-lg leading-6 text-center `}>Free Delivery Worldwide</h4>
                         <Link href="/" className={`${monst.className} text-[#888888] text-[13px] leading-7 text-center transition-all duration-300 hover:text-[#e65540] flex justify-center items-center`}>Click here for more info</Link>
                     </div>
                     <div className="flex-1 p-4 border-t-[1px] border-b-[1px] border-t-[#d9d9d9] border-b-[#d9d9d9] border-r-0 border-l-0 md:border-t-0 md:border-b-0 md:border-l-[1px] md:border-r-[1px] md:border-l-[#d9d9d9] md:border-r-[#d9d9d9]">
-                        <h4 className={`${monst.className} text-[#555555] text-lg leading-6 text-center `}>30 Days Return</h4>
+                        <h4 className={`${monst.className} text-[#FFFFFF] text-lg leading-6 text-center `}>30 Days Return</h4>
                         <Link href="/" className={`${monst.className} text-[#888888] text-[13px] leading-7 text-center transition-all duration-300 hover:text-[#e65540] flex justify-center items-center`}>Simply return it within 30 days for an exchange.</Link>
                     </div>
                     <div className="flex-1 p-4">
-                        <h4 className={`${monst.className} text-[#555555] text-lg leading-6 text-center `}>Store Opening</h4>
+                        <h4 className={`${monst.className} text-[#FFFFFF] text-lg leading-6 text-center `}>Store Opening</h4>
                         <Link href="/" className={`${monst.className} text-[#888888] text-[13px] leading-7 text-center transition-all duration-300 hover:text-[#e65540] flex justify-center items-center`}>Shop open from Monday to Sunday</Link>
                     </div>
 

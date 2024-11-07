@@ -1,11 +1,11 @@
 'use client'
 
 import { useEffect, useState } from "react";
+import { useCart } from './CartContext';
 import Link from "next/link"
 import Image from "next/image";
 
 import AddToCart from "./AddToCart";
-import { getCartItems } from './localStorageAddToCart';
 
 import Logo from "../../../public/logo.png"
 import Profile from "../../../public/icon-header-01.png"
@@ -22,17 +22,11 @@ const monst = Montserrat({ subsets: ["latin"] });
 
 
 export default function Header() {
+    const { cartItems } = useCart();
     const [scrollY, setScrollY] = useState(0)
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenPro, setIsOpenPro] = useState(false)
     const [isOpenCart, setIsOpenCart] = useState(false)
-    const [itemsNumber, setItemsNumber] = useState(0)
-
-    const cartItems = getCartItems();
-    useEffect(() => {
-
-        setItemsNumber(cartItems.length)
-    }, [cartItems.length])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -90,14 +84,14 @@ export default function Header() {
                             </Link>
                         </div>
                         <div className="h-full flex-1 flex justify-center items-center">
-                            <span className={`${monst.className} text-[#888888] text-[13px] leading-7`}>Free shipping for standard order over $100</span>
+                            <span className={`${monst.className} text-[#888888] text-[13px] leading-7`}>DeveLoped by Hassan Eskandari</span>
                         </div>
                         <div className="h-full flex-1 flex justify-end items-center pr-12">
-                            <Link href="mailto:fashe@gmail.com" className={`${monst.className} text-[#888888] text-[13px] leading-7`}>Fashe@gmail.com</Link>
+                            <Link href="mailto:fashe@gmail.com" className={`${monst.className} text-[#888888] text-[13px] leading-7`}>Hassan.eskandari.sky@gmail.com</Link>
                         </div>
                     </div>
                 )}
-                <div className={`${scrollY > 110 ? "h-14" : "h-20"} w-full flex justify-center items-center gap-2 bg-white transition duration-300 shadow-[0_1px_5px_0px_rgba(0,0,0,0.2)]`}>
+                <div className={`${scrollY > 110 ? "h-14" : "h-20"} w-full flex justify-center items-center gap-2 bg-[#222222] transition duration-300 shadow-[0_1px_5px_0px_rgba(0,0,0,0.2)]`}>
                     <div className="h-full w-1/2 lg:w-1/4 flex pl-5 lg:pl-10 py-2.5 items-center justify-start">
                         <Link href="/">
                             <Image src={Logo} width={100} height={100} alt="Logo Page(Fashe)"></Image>
@@ -107,32 +101,32 @@ export default function Header() {
                         <nav className="w-full h-full flex justify-center items-center">
                             <ul className="w-3/4 h-full flex justify-center items-center lg:gap-1">
                                 <li className="flex-1 h-full flex justify-center items-center group lg:px-1 xl:px-0">
-                                    <Link href="/" className={`${monst.className} text-[#333333] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>Home</Link>
+                                    <Link href="/" className={`${monst.className} text-[#FFFFFF] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>Home</Link>
                                 </li>
                                 <li className="flex-1 h-full flex justify-center items-center group lg:px-1 xl:px-0">
-                                    <Link href="/" className={`${monst.className} text-[#333333] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>Shop</Link>
+                                    <Link href="/" className={`${monst.className} text-[#FFFFFF] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>Shop</Link>
                                 </li>
                                 <li className="flex-1 h-full flex justify-center items-center group lg:px-1 xl:px-0">
                                     <Link href="/" className={`${monst.className} text-[#e65540] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>Sale</Link>
                                 </li>
                                 <li className="flex-1 h-full flex justify-center items-center group lg:px-1 xl:px-0">
-                                    <Link href="/" className={`${monst.className} text-[#333333] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>Favorites</Link>
+                                    <Link href="/" className={`${monst.className} text-[#FFFFFF] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>Favorites</Link>
                                 </li>
                                 <li className="flex-1 h-full flex justify-center items-center group lg:px-1 xl:px-0">
-                                    <Link href="/" className={`${monst.className} text-[#333333] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>Blog</Link>
+                                    <Link href="/" className={`${monst.className} text-[#FFFFFF] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>Blog</Link>
                                 </li>
                                 <li className="flex-1 h-full flex justify-center items-center group lg:px-1 xl:px-0">
-                                    <Link href="/" className={`${monst.className} text-[#333333] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>About</Link>
+                                    <Link href="/" className={`${monst.className} text-[#FFFFFF] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>About</Link>
                                 </li>
                                 <li className="flex-1 h-full flex justify-center items-center group lg:px-1 xl:px-0">
-                                    <Link href="/" className={`${monst.className} text-[#333333] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>Contact</Link>
+                                    <Link href="/" className={`${monst.className} text-[#FFFFFF] text-[15px] group-hover:border-b-[1px] group-hover:border-b-[#333333] transition-all duration-400`}>Contact</Link>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div className="h-full w-1/2 lg:w-1/4 flex justify-end items-center pr-3 lg:pr-12 z-50">
                         <div onClick={() => setIsOpenPro(!isOpenPro)} className="flex justify-center items-center cursor-pointer mx-3 lg:mx-0 relative">
-                            <Image src={Profile} width={30} height={30} alt="Logo Profile"></Image>
+                            <Image src={Profile} width={30} height={30} alt="Logo Profile" ></Image>
                             {isOpenPro && (
                                 <div className="w-40 absolute right-0 bottom-0 bg-[#f5f5f5] transform translate-x-[-15px] translate-y-[125px] rounded">
                                     <ul>
@@ -149,7 +143,7 @@ export default function Header() {
                         <span className="hidden lg:flex justify-center items-center text-[#e5e5e5] mx-5 mt-1">|</span>
                         <div onClick={() => setIsOpenCart(true)} className="flex justify-center items-center cursor-pointer mx-3 lg:mx-0 relative group">
                             <Image src={CartLogo} width={25} height={25} alt="Logo Shopping Cart"></Image>
-                            <div className="absolute w-5 h-5 rounded-full  bg-[#000000d6] right-0 top-0 transform translate-x-[5px] translate-y-[-5px] text-white flex justify-center items-center text-sm p-1 group-hover:bg-[#e65540] group-hover:text-black transition duration-300">{itemsNumber}</div>
+                            <div className="absolute w-5 h-5 rounded-full  bg-[#000000d6] right-0 top-0 transform translate-x-[5px] translate-y-[-5px] text-white flex justify-center items-center text-sm p-1 group-hover:bg-[#e65540] group-hover:text-black transition duration-300">{cartItems.length}</div>
                         </div>
                         {isOpenCart && (
                             <AddToCart state={isOpenCart} updateState={updateSharedState} />
@@ -168,10 +162,10 @@ export default function Header() {
             <div className={`${isOpen ? "max-h-fit" : "max-h-0 hidden"} w-full lg:hidden transition-all duration-1000 ease-in-ou`}>
                 <div className="w-full h-fit bg-[#f5f5f5] px-4 border-t-[1px] border-t-[#ececec]">
                     <div className="w-full border-b-[1px] border-b-[#ececec] flex justify-start items-center">
-                        <span className={`${monst.className} text-[#888888] text-[13px] leading-7`}>Free shipping for standard order over $100</span>
+                        <span className={`${monst.className} text-[#888888] text-[13px] leading-7`}>Free DeveLoped by Hassan Eskandari</span>
                     </div>
                     <div className="w-full border-b-[1px] border-b-[#ececec] flex justify-start items-center">
-                        <Link href="mailto:fashe@gmail.com" className={`${monst.className} text-[#888888] text-[13px] leading-7`}>Fashe@gmail.com</Link>
+                        <Link href="mailto:fashe@gmail.com" className={`${monst.className} text-[#888888] text-[13px] leading-7`}>Hassan.eskandari.sky@gmail.com</Link>
                     </div>
                     <div className="w-full border-b-[1px] border-b-[#ececec] flex justify-start items-center">
                         <Link href="/" className="h-full flex justify-center items-center pl-0 p-2.5 text-[#888888] text-lg hover:text-[#e65540]">

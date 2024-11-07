@@ -63,18 +63,18 @@ export default function Product() {
 
 
     return (
-        <section className="bg-[#fff] pb-36 pt-6 w-full">
+        <section className="bg-[#121212] pb-36 pt-6 w-full">
             <div className="mx-auto px-3.5 w-full lg:px-36">
                 <div className="pb-2.5 ">
-                    <h3 className={`${popp.className} text-4xl leading-10 uppercase text-[#222] font-bold`}>Product Overview</h3>
+                    <h3 className={`${popp.className} text-4xl leading-10 uppercase text-[#FFFFFF] font-bold`}>Product Overview</h3>
                 </div>
                 <div className="pb-12">
                     <ul className="my-2.5 flex flex-wrap">
-                        <button onClick={() => {setIsActive(1); Filter2()}} className={`${popp.className} ${isActive == 1 ? "text-[#333] border-b border-b-[#797979]" : "text-[#888] border-b border-b-transparent"} text-[15px] leading-5  transition-all duration-[0.4s] mr-8 my-1`} type="button">All Products</button>
-                        <button onClick={() => { setIsActive(2); Filter("women's clothing"); }} className={`${popp.className} ${isActive == 2 ? "text-[#333] border-b border-b-[#797979]" : "text-[#888] border-b border-b-transparent"} text-[15px] leading-5  transition-all duration-[0.4s] mr-8 my-1`} type="button">Women</button>
-                        <button onClick={() => { setIsActive(3); Filter("men's clothing"); }} className={`${popp.className} ${isActive == 3 ? "text-[#333] border-b border-b-[#797979]" : "text-[#888] border-b border-b-transparent"} text-[15px] leading-5  transition-all duration-[0.4s] mr-8 my-1`} type="button">Men</button>
-                        <button onClick={() => { setIsActive(4); Filter("jewelery"); }} className={`${popp.className} ${isActive == 4 ? "text-[#333] border-b border-b-[#797979]" : "text-[#888] border-b border-b-transparent"} text-[15px] leading-5  transition-all duration-[0.4s] mr-8 my-1`} type="button">Jewelery</button>
-                        <button onClick={() => { setIsActive(5); Filter("electronics"); }} className={`${popp.className} ${isActive == 5 ? "text-[#333] border-b border-b-[#797979]" : "text-[#888] border-b border-b-transparent"} text-[15px] leading-5  transition-all duration-[0.4s] mr-8 my-1`} type="button">Electronics</button>
+                        <button onClick={() => {setIsActive(1); Filter2()}} className={`${popp.className} ${isActive == 1 ? "text-[#FF5733] border-b border-b-[#797979]" : "text-[#888] border-b border-b-transparent"} text-[15px] leading-5  transition-all duration-[0.4s] mr-8 my-1`} type="button">All Products</button>
+                        <button onClick={() => { setIsActive(2); Filter("women's clothing"); }} className={`${popp.className} ${isActive == 2 ? "text-[#FF5733] border-b border-b-[#797979]" : "text-[#888] border-b border-b-transparent"} text-[15px] leading-5  transition-all duration-[0.4s] mr-8 my-1`} type="button">Women</button>
+                        <button onClick={() => { setIsActive(3); Filter("men's clothing"); }} className={`${popp.className} ${isActive == 3 ? "text-[#FF5733] border-b border-b-[#797979]" : "text-[#888] border-b border-b-transparent"} text-[15px] leading-5  transition-all duration-[0.4s] mr-8 my-1`} type="button">Men</button>
+                        <button onClick={() => { setIsActive(4); Filter("jewelery"); }} className={`${popp.className} ${isActive == 4 ? "text-[#FF5733] border-b border-b-[#797979]" : "text-[#888] border-b border-b-transparent"} text-[15px] leading-5  transition-all duration-[0.4s] mr-8 my-1`} type="button">Jewelery</button>
+                        <button onClick={() => { setIsActive(5); Filter("electronics"); }} className={`${popp.className} ${isActive == 5 ? "text-[#FF5733] border-b border-b-[#797979]" : "text-[#888] border-b border-b-transparent"} text-[15px] leading-5  transition-all duration-[0.4s] mr-8 my-1`} type="button">Electronics</button>
                     </ul>
                 </div>
             </div>

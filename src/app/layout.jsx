@@ -1,8 +1,9 @@
-`use client`
+// "use client"
 
 import Header from "./Component/Header"
 import Footer from "./Component/Footer";
 import Button from "./Component/Buttom";
+import { CartProvider } from './Component/CartContext';
 
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -19,12 +20,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} relative`}>
+        <CartProvider>
 
-        <Header />
-        {children}
-        <Footer />
-        <Button />
-        
+          <Header />
+          {children}
+          <Footer />
+          <Button />
+
+        </CartProvider>
+
+
 
       </body>
     </html>

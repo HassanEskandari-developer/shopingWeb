@@ -3,7 +3,7 @@ export const getProducts = (key) => {
   if (typeof window !== "undefined") {
     try {
       const savedLikes = JSON.parse(localStorage.getItem(key));
-      return savedLikes ;
+      return savedLikes || {};
     } catch (error) {
       console.error('Error parsing liked products from localStorage:', error);
       return {};
